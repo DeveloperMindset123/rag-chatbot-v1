@@ -23,6 +23,7 @@ relevant github file for reference : https://github.com/alejandro-ao/mcp-client-
 # IMPORTANT NOTE : There's no "tag" keyword
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.fastmcp.prompts import base
 from fastmcp import Client
 from chromaDB import client, ChromaDBVectorDatabase, get_huggingface_data
 from datetime import datetime
@@ -164,7 +165,20 @@ def enter_data_to_new_collection(collection_name : str) -> str:
 def get_collection_data_count(name_of_collection : str) -> int:
     return client.get_collection(name=name_of_collection.strip().replace(" ", "")).count()
 
-# define list of relevant resources
+# TODO : look into ways to reduce the size of the description
+@mcp.tool(
+    name="get_user_query_history",
+    description="""the user queries alongside llm response for the current session is stored within the chroma db collection 'contextual_data'. Can be used to search and retrieve the relevant data stored here for follow-up queries from the user for query history. If your unsure of the user query, use this tool to retrieve previous query related contextual information before attempting to answer. Keep responses brief and utilize previous conversation history stored within the 'contextual_data' to formulate your responses.
+    """
+)
+def retrieve_user_query_history(user_query:str, collection_name : str="contextual_data", n_results:int=5):
+    return client.get_collection(collection_name).query(
+        query_texts=[user_query],
+        n_results=n_results
+    )
+
+
+# define list of relevant prompts
 @mcp.prompt(
     name="convert",
     description="Given the vector data which represents relevant contextual information, use it to formulate an appropriate response that will be sent back to the user, use appropriate easy to read markdown format."
@@ -173,13 +187,50 @@ def convert_to_NLP(vector_data:str="placeholder data") -> str | Any:
     return str([
         {
             "role" : "system",
-            "content" : "You are a helpful assistant skilled at using vector data to formulate human readable responses to user queries."
+            "content" : "You are a helpful assistant skilled at using vector data to formulate human readable responses to user queries. Also make sure to keep track of previous conversation history for follow up responses."
         },
         {
             "role" : "user",
-            "content" : f"use the following data for additional context:\n {vector_data}"
+            "content" : f"use the following data for additional context:\n {vector_data}, discard unneccesary meatadata and ignore the author portion unless user explictly mentions it, and reference contextual_data for previous conversation history."
         }
     ])
+
+@mcp.prompt(
+    name="track_context_history",
+    description="fetch previous query related history from the collection 'contextual_data'."
+)
+def fetch_conversation_history(query : str) -> list[base.Message]:
+    return [
+        base.UserMessage("Within the collection 'contextual_data', refer to the role of 'user' for previous user queries, and 'assistant' for previous LLM responses."),
+        base.UserMessage(query),
+        base.AssistantMessage("I will use the current and previous conversation query to provide an appropriate response.")
+    ]
+
+@mcp.prompt(
+    name="track_database_history",
+    description="primary vector database that contains information is complete_collection"
+)
+def fetch_data(query : str) -> list[base.Message]:
+    return [
+        base.UserMessage(f"Based on the query {query}, reference the 'complete_collection' data for relevant context."),
+        base.AssistantMessage("I will reference the vector database collection named 'complete_collection' to retrieve contextually accurate response.")
+    ]
+# TODO : refactor/remove if needed
+# define list of relevant resources
+# this resource is kind of useless
+@mcp.resource("context_history://{user_query}/{collection_name}/{relevant_docs}")
+def get_user_query_history(user_query : str, collection_name : str="contextual_data", relevant_docs : str = "5"):
+    '''
+    Utilizes the tool get_user_query_history, think of it as a wrapper around the tool and allows for propagating the parameters from resource to tool.
+    '''
+    result = retrieve_user_query_history(user_query, collection_name, int(relevant_docs))
+    print(f"contextual retrieval lookup result:\n\n\n{result}")
+    return result
+
+# TODO : implement as part of enhancement
+@mcp.resource("query_history://user_query")
+def retrieve_user_query():
+    pass
 
 # TODO : delete later
 # NOTE : for reference, delete later

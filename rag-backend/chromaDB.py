@@ -1,12 +1,13 @@
+# type : ignore
+# run this script to store data within chroma db
 from typing import Any
 from datasets import load_dataset
 import chromadb
 from datetime import datetime
 from chromadb.config import Settings
-# Initialize FastMCP server
-# mcp = FastMCP("mcp-protocol")
-#
-client = chromadb.HttpClient(host="localhost", port=8000, settings=Settings(allow_reset=True))
+
+client = chromadb.HttpClient(host="localhost", port=9000)       # recommended
+local_client = chromadb.PersistentClient(path="/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/chromaDbData")
 
 # Constants
 HUGGINGFACE_DATASET_API = "rag-datasets/rag-mini-wikipedia"
@@ -126,10 +127,7 @@ def get_huggingface_data() -> dict[str, Any] | None:
             "status_code" : 503,
             "message": str(e)}
 
-# @mcp.tool()
-
-
 if __name__ == "__main__":
     huggingface_data = get_huggingface_data()
-    # collection_exists = client.get_collection("complete_collection")
-    # print(collection_exists)
+    chroma_instance = ChromaDBVectorDatabase("complete_collection", client)
+    chroma_instance.store_data(huggingface_data["data"])
