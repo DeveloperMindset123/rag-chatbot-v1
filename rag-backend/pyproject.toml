@@ -1,0 +1,16 @@
+[project]
+name = "rag-backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.51.0",
+    "chroma>=0.2.0",
+    "chromadb>=1.0.8",
+    "datasets>=3.6.0",
+    "fastmcp>=2.3.3",
+    "grequests>=0.7.0",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.8.0",
+]
