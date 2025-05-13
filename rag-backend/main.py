@@ -1,14 +1,3 @@
-"""
-List of things to implement:
-1. create an ephemeral client within mcp_client that will allow for storage and retrieval of user and assistnat responses (should be stored in the form of list of strings) and deleted after usage
-
-2. create a new tool (replace the current contextual retrieval tool) that will be able to lookup and retrieve context history for reference
-
-3. context history for user and assistant messages should be coming in from the frontend side in the form of a dictionary in the following format:
-
-chat_history : { user_history : [], assistant_history : [] }
-"""
-
 from fastapi import FastAPI, HTTPException  # type: ignore
 from fastapi.middleware.cors import CORSMiddleware  # type: ignore
 from pydantic import BaseModel  # type: ignore
@@ -17,7 +6,7 @@ from contextlib import asynccontextmanager
 from mcp_client import MCPClient
 from dotenv import load_dotenv  # type: ignore
 from pydantic_settings import BaseSettings  # type: ignore
-from agents import Agent, Runner
+from agents import Agent, Runner  # type: ignore
 
 load_dotenv()
 
@@ -123,20 +112,9 @@ async def process_query(request: QueryRequest):
 
     """Process a query and return the response"""
     try:
-        # await app.state.client.set_model("Gemini")        # TODO : implement support, claude works for now
         messages = await app.state.client.process_query(request.query)
-        # print(f"final_message : {messages}")
-
         agent_list = await get_openAI_Agent_list()
-        # json_serialized_data = await Runner.run(agent_list[0], input=str(messages))
         nlp_response = await Runner.run(agent_list[0], input=str(messages))
-        # json_serialized_data = await Runner.run(
-        #     agent_list[1], input=str(nlp_response.final_output)
-        # )
-        # json_formatted_data = json.dumps(
-        #     json.loads(json_serialized_data.final_output), indent=2
-        # )
-        # print(json_serialized_data.final_output)
         print(nlp_response.final_output)
         # print(f"{messages}")
         return {"final_response": nlp_response.final_output}

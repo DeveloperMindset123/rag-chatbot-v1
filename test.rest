@@ -1,8 +1,0 @@
-# GET http://localhost:8000/tools
-
-POST http://localhost:8000/query
-Content-Type: application/json
-
-{
-    "query" : "What can you tell me about abraham lincoln?"
-}

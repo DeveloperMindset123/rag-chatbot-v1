@@ -768,3 +768,13 @@ ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no
 ERROR:openai.agents:Error getting response: Object of type TextContent is not JSON serializable. (request_id: None)
 ERROR:openai.agents:Error getting response: Object of type TextContent is not JSON serializable. (request_id: None)
 ERROR:openai.agents:Error getting response: Object of type TextContent is not JSON serializable. (request_id: None)
+ERROR:mcp_client:Error calling LLM: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error processing query: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error calling LLM: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error processing query: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error calling LLM: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error processing query: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error calling LLM: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error processing query: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error calling LLM: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
+ERROR:mcp_client:Error processing query: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}}
