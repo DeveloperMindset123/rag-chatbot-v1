@@ -1,26 +1,16 @@
 # type : ignore
-
-# This is mcp client for CLI communication.
-"""
-Implementation checklist: (delete after)
-TODO : First figure out if hashmap can be used to store context (and using a seperate LLM to make the current contextual information JSON serializable.) --> NOTE that you can either use Ollama or OpenAI for this (whichever is least expensive, have ollama as primary and openAI for fallback, to save costs)
-
-TODO : see if you can store the context within a new directory of chromaDB vector (will requier another chromaDB instance) --> this will require writting additional tools/resources to expose to the LLM for use
-
-TODO : Implement the gemini endpoint as alternative for users to choose between anthropic and gemini for their particular LLM.
-"""
-
+"""This is mcp client for CLI communication."""
 import asyncio
 import json
 import chromaDB
 import random
 from typing import Optional
 from contextlib import AsyncExitStack
-from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
+from mcp import ClientSession, StdioServerParameters  # type: ignore
+from mcp.client.stdio import stdio_client  # type: ignore
 from datetime import datetime
-from anthropic import Anthropic
-from dotenv import load_dotenv
+from anthropic import Anthropic  # type: ignore
+from dotenv import load_dotenv  # type: ignore
 
 load_dotenv()  # load environment variables from .env
 
@@ -84,8 +74,6 @@ class MCPClient:
             for tool in response.tools
         ]
 
-        # print(f"current message context : {json.dumps(message_context)}")
-        # Initial Claude API call
         response = self.anthropic.messages.create(
             model="claude-3-7-sonnet-20250219",
             max_tokens=3000,
@@ -153,7 +141,6 @@ class MCPClient:
         self.context_history_database.add(
             documents=str(message_context),
             metadatas=metadatas,
-            # ids=random.sample(range(1,len(str(message_context)) * 2), len(str(message_context)))
             ids=str(random.randint(0, 1000000)),
         )
         print("finished pushing data to chroma db")
@@ -191,10 +178,13 @@ class MCPClient:
 
 
 async def main():
+    """
+    - users can choose to pass in the path where their server is located or hardcode the path of their server within server_script_path variable.
+
+    - NOTE : for accuracy and to avoid errors, use absolute path only, update the server_script_path value to match your own absolute path.
+    """
     server_script_path = ""
     if len(sys.argv) < 2:
-        # print("Usage: python client.py <path_to_server_script>")
-        # sys.exit(1)
         server_script_path = "/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/server.py"
 
     client = MCPClient()

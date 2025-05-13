@@ -1,41 +1,48 @@
 # type : ignore
-# run this script to store data within chroma db
+"""run this script to store data within chroma db from huggingface"""
 from typing import Any
-from datasets import load_dataset
-import chromadb
+from datasets import load_dataset  # type: ignore
+import chromadb  # type: ignore
 from datetime import datetime
-from chromadb.config import Settings
+from chromadb.config import Settings  # type: ignore
 
-client = chromadb.HttpClient(host="localhost", port=9000)       # recommended
-local_client = chromadb.PersistentClient(path="/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/chromaDbData")
+client = chromadb.HttpClient(host="localhost", port=9000)  # recommended
+local_client = chromadb.PersistentClient(
+    path="/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/chromaDbData"
+)
 
 # Constants
 HUGGINGFACE_DATASET_API = "rag-datasets/rag-mini-wikipedia"
 HUGGINGFACE_LOAD_DATASET_2ND_PARAM = "question-answer"
 
+
 class ChromaDBVectorDatabase:
-    def __init__(self, collection_name : str ="complete_collection", client_instance:Any=None):
+    def __init__(
+        self, collection_name: str = "complete_collection", client_instance: Any = None
+    ):
         # Initialize ChromaDB client and create a collection
         self.client = client_instance
         self.collection = self.client.get_or_create_collection(
             name=collection_name,
             metadata={
                 "description": "chroma db vector collection",
-                "created": str(datetime.now())
-            }
+                "created": str(datetime.now()),
+            },
         )
-        self.collection_name=collection_name
+        self.collection_name = collection_name
 
     def get_collection_list(self):
         return self.client.list_collections()
 
-    def create_new_collection(self,collection_name : str):
-        self.client.create_colletion(name=collection_name,
+    def create_new_collection(self, collection_name: str):
+        self.client.create_colletion(
+            name=collection_name,
             metadata={
-            "author" : "Ayan Das",
-            "description" : "chroma db vector collection",
-            "created" : str(datetime.now())
-        })
+                "author": "Ayan Das",
+                "description": "chroma db vector collection",
+                "created": str(datetime.now()),
+            },
+        )
 
     def store_data(self, data):
         """
@@ -43,7 +50,7 @@ class ChromaDBVectorDatabase:
         Each dictionary should have 'question', 'answer', and 'id'.
         """
         # Extract the test data
-        test_data = list(data['test'])
+        test_data = list(data["test"])
 
         # Prepare lists for batch insertion
         documents = []
@@ -57,11 +64,11 @@ class ChromaDBVectorDatabase:
             documents.append(document_text)
 
             # Create metadata
-            metadata = {"author": "ayan das", "question": entry['question']}
+            metadata = {"author": "ayan das", "question": entry["question"]}
             metadatas.append(metadata)
 
             # Convert ID to string to ensure compatibility
-            ids.append(str(entry['id']))
+            ids.append(str(entry["id"]))
 
         # Print some debug information
         print(f"Number of documents: {len(documents)}")
@@ -78,7 +85,7 @@ class ChromaDBVectorDatabase:
             self.collection.add(
                 documents=documents[i:batch_end],
                 metadatas=metadatas[i:batch_end],
-                ids=ids[i:batch_end]
+                ids=ids[i:batch_end],
             )
             print(f"Added batch {i//batch_size + 1} ({i} to {batch_end})")
 
@@ -87,45 +94,30 @@ class ChromaDBVectorDatabase:
         Search for the most relevant documents based on the query.
         Returns the top n_results matching documents.
         """
-        results = self.collection.query(
-            query_texts=[query],
-            n_results=n_results
-        )
+        results = self.collection.query(query_texts=[query], n_results=n_results)
         return results
-    def deleteCollection(self, collection_to_delete : str):
+
+    def deleteCollection(self, collection_to_delete: str):
         return self.client.delete_collection(name=collection_to_delete)
 
-# @mcp.tool()
-#
-# this is to experiment and check if the collection query is working as intended --> only used for local testing
+
 def get_huggingface_data() -> dict[str, Any] | None:
     """Make a request to the huggingface dataset api to retrieve the data and send it to chromaDB vector database"""
 
     try:
         return {
-            "status" : "success",
-            "status_code" : 200,
-            "message" : "data loaded successfully",
-            "data" : load_dataset(HUGGINGFACE_DATASET_API, HUGGINGFACE_LOAD_DATASET_2ND_PARAM)
+            "status": "success",
+            "status_code": 200,
+            "message": "data loaded successfully",
+            "data": load_dataset(
+                HUGGINGFACE_DATASET_API, HUGGINGFACE_LOAD_DATASET_2ND_PARAM
+            ),
         }
 
-        # not needed architecturally, use for reference purpose only.
-        # collection_name = "complete_collection"
-        # collection = ChromaDBVectorDatabase(collection_name)
-
-        # collection.store_data(data)
-        # sample_query = "was abraham lincoln the first president of the united states?"
-        # search_results = collection.search(sample_query)
-
-        # print(f"retrieved search results : \n {search_results}")
-
-        # return {"status": "success", "message": "Data loaded and stored successfully", "collection" : collection }
     except Exception as e:
         print(f"Error: {str(e)}")
-        return {
-            "status": "error",
-            "status_code" : 503,
-            "message": str(e)}
+        return {"status": "error", "status_code": 503, "message": str(e)}
+
 
 if __name__ == "__main__":
     huggingface_data = get_huggingface_data()
