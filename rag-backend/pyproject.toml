@@ -9,8 +9,21 @@ dependencies = [
     "chroma>=0.2.0",
     "chromadb>=1.0.8",
     "datasets>=3.6.0",
+    "fastapi>=0.115.9",
+    "fastapi-middleware>=0.2.1",
     "fastmcp>=2.3.3",
+    "google-genai>=1.14.0",
     "grequests>=0.7.0",
     "httpx>=0.28.1",
     "mcp[cli]>=1.8.0",
+    "openai-agents>=0.0.14",
+    "pydantic>=2.11.4",
+    "pydantic-settings>=2.9.1",
+    "utils>=1.0.2",
+    "uvicorn>=0.34.2",
+]
+
+[tool.uv.workspace]
+members = [
+    "rag-frontend",
 ]
