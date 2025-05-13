@@ -1,6 +1,0 @@
-.env
-/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/.env
-/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/chromaDbData/** */
-test.rest
-myApp.log
-mcp_client_log.log

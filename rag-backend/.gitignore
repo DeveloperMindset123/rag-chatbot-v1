@@ -11,3 +11,5 @@ wheels/
 .venv
 .env
 /Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/chromaDbData/** 
+
+/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/conversations

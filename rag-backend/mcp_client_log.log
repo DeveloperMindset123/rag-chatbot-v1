@@ -1,0 +1,770 @@
+ERROR:mcp_client:Error calling LLM: object str can't be used in 'await' expression
+ERROR:mcp_client:Error processing query: object str can't be used in 'await' expression
+ERROR:mcp_client:Error calling LLM: object str can't be used in 'await' expression
+ERROR:mcp_client:Error processing query: object str can't be used in 'await' expression
+ERROR:mcp_client:Error calling LLM: 40 validation errors for GenerateContentConfig
+tools.0.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='echo', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.0.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='A simple echo tool', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.0.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'message'...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.0.callable
+  Input should be callable [type=callable_type, input_value={'name': 'echo', 'descrip...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.1.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='context_retriever', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.1.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value="seaches chroma DB to ret...rch query is performed.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.1.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'user_que...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.1.callable
+  Input should be callable [type=callable_type, input_value={'name': 'context_retriev...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.2.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='peek_at_database', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.2.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='allows for users to retr...: complete_collection).', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.2.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'number_o...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.2.callable
+  Input should be callable [type=callable_type, input_value={'name': 'peek_at_databas...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.3.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='modify_collection_name', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.3.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='allows user to modify th... an existing collection', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.3.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'original...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.3.callable
+  Input should be callable [type=callable_type, input_value={'name': 'modify_collecti...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.4.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='get_list_of_collections', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.4.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='allows for retrieval of ...of availble collections', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.4.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {}, 'title...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.4.callable
+  Input should be callable [type=callable_type, input_value={'name': 'get_list_of_col...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.5.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='delete_collection_by_name', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.5.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='delete a particular coll...ed on the provided name', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.5.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'collecti...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.5.callable
+  Input should be callable [type=callable_type, input_value={'name': 'delete_collecti...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.6.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='enter_data', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.6.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='This tool will re-enter ...wly created collection.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.6.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'collecti...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.6.callable
+  Input should be callable [type=callable_type, input_value={'name': 'enter_data', 'd...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.7.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='get_collection_data_count', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.7.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='returns the number of da...a particular collection', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.7.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'name_of_...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.7.callable
+  Input should be callable [type=callable_type, input_value={'name': 'get_collection_...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.8.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='get_user_query_history', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.8.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value="the user queries alongsi...e your responses.\n    ", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.8.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'user_que...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.8.callable
+  Input should be callable [type=callable_type, input_value={'name': 'get_user_query_...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.9.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='count_claude_message_tokens', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.9.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='returns the total input ...e present chat session.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.9.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'current_...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.9.callable
+  Input should be callable [type=callable_type, input_value={'name': 'count_claude_me...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+ERROR:mcp_client:Error processing query: 40 validation errors for GenerateContentConfig
+tools.0.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='echo', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.0.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='A simple echo tool', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.0.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'message'...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.0.callable
+  Input should be callable [type=callable_type, input_value={'name': 'echo', 'descrip...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.1.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='context_retriever', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.1.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value="seaches chroma DB to ret...rch query is performed.", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.1.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'user_que...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.1.callable
+  Input should be callable [type=callable_type, input_value={'name': 'context_retriev...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.2.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='peek_at_database', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.2.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='allows for users to retr...: complete_collection).', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.2.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'number_o...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.2.callable
+  Input should be callable [type=callable_type, input_value={'name': 'peek_at_databas...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.3.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='modify_collection_name', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.3.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='allows user to modify th... an existing collection', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.3.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'original...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.3.callable
+  Input should be callable [type=callable_type, input_value={'name': 'modify_collecti...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.4.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='get_list_of_collections', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.4.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='allows for retrieval of ...of availble collections', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.4.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {}, 'title...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.4.callable
+  Input should be callable [type=callable_type, input_value={'name': 'get_list_of_col...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.5.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='delete_collection_by_name', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.5.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='delete a particular coll...ed on the provided name', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.5.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'collecti...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.5.callable
+  Input should be callable [type=callable_type, input_value={'name': 'delete_collecti...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.6.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='enter_data', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.6.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='This tool will re-enter ...wly created collection.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.6.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'collecti...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.6.callable
+  Input should be callable [type=callable_type, input_value={'name': 'enter_data', 'd...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.7.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='get_collection_data_count', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.7.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='returns the number of da...a particular collection', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.7.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'name_of_...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.7.callable
+  Input should be callable [type=callable_type, input_value={'name': 'get_collection_...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.8.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='get_user_query_history', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.8.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value="the user queries alongsi...e your responses.\n    ", input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.8.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'user_que...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.8.callable
+  Input should be callable [type=callable_type, input_value={'name': 'get_user_query_...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+tools.9.Tool.name
+  Extra inputs are not permitted [type=extra_forbidden, input_value='count_claude_message_tokens', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.9.Tool.description
+  Extra inputs are not permitted [type=extra_forbidden, input_value='returns the total input ...e present chat session.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.9.Tool.input_schema
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'properties': {'current_...ents', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+tools.9.callable
+  Input should be callable [type=callable_type, input_value={'name': 'count_claude_me...nts', 'type': 'object'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/callable_type
+ERROR:mcp_client:Error calling LLM: object Client can't be used in 'await' expression
+ERROR:mcp_client:Error processing query: object Client can't be used in 'await' expression
+ERROR:mcp_client:Error calling LLM: 'dict' object has no attribute 'name'
+ERROR:mcp_client:Error processing query: 'dict' object has no attribute 'name'
+ERROR:mcp_client:Error calling LLM: 'dict' object has no attribute 'name'
+ERROR:mcp_client:Error processing query: 'dict' object has no attribute 'name'
+ERROR:mcp_client:Error calling LLM: 'dict' object has no attribute 'inputSchema'
+ERROR:mcp_client:Error processing query: 'dict' object has no attribute 'inputSchema'
+ERROR:mcp_client:Error calling LLM: 'inputSchema'
+ERROR:mcp_client:Error processing query: 'inputSchema'
+ERROR:mcp_client:Error calling LLM: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error processing query: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error calling LLM: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error processing query: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error calling LLM: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error processing query: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error calling LLM: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error processing query: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error calling LLM: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error processing query: 16 validation errors for _GenerateContentParameters
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Content.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.list[union[File,Part,str]]
+  Input should be a valid list [type=list_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[Content,list[union[File,Part,str]],File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.Content
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.list[union[File,Part,str]].0.File.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.File.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.role
+  Extra inputs are not permitted [type=extra_forbidden, input_value='user', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.Part.content
+  Extra inputs are not permitted [type=extra_forbidden, input_value='What kind of data do you have available?', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/extra_forbidden
+contents.list[union[File,Part,str]].0.str
+  Input should be a valid string [type=string_type, input_value={'role': 'user', 'content...do you have available?'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+contents.File
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.Part
+  Input should be a valid dictionary or object to extract fields from [type=model_attributes_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/model_attributes_type
+contents.str
+  Input should be a valid string [type=string_type, input_value=[{'role': 'user', 'conten...o you have available?'}], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+ERROR:mcp_client:Error calling LLM: object GenerateContentResponse can't be used in 'await' expression
+ERROR:mcp_client:Error processing query: object GenerateContentResponse can't be used in 'await' expression
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:mcp_client:Error calling LLM: name 'response' is not defined
+ERROR:mcp_client:Error processing query: name 'response' is not defined
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:mcp_client:Error calling LLM: 'Content' object is not subscriptable
+ERROR:mcp_client:Error processing query: 'Content' object is not subscriptable
+ERROR:mcp_client:Error calling LLM: 'Content' object has no attribute 'text'
+ERROR:mcp_client:Error processing query: 'Content' object has no attribute 'text'
+ERROR:mcp_client:Error calling LLM: 'Content' object has no attribute 'items'
+ERROR:mcp_client:Error processing query: 'Content' object has no attribute 'items'
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:mcp_client:Error calling LLM: 'dict' object has no attribute 'content'
+ERROR:mcp_client:Error processing query: 'dict' object has no attribute 'content'
+ERROR:mcp_client:Error calling LLM: 'dict' object has no attribute 'content'
+ERROR:mcp_client:Error processing query: 'dict' object has no attribute 'content'
+ERROR:mcp_client:Error processing query: 'GenerateContentResponse' object has no attribute 'content'
+ERROR:openai.agents:Error getting response: Object of type TextContent is not JSON serializable. (request_id: None)
+ERROR:openai.agents:Error getting response: Object of type TextContent is not JSON serializable. (request_id: None)
+ERROR:openai.agents:Error getting response: Object of type TextContent is not JSON serializable. (request_id: None)

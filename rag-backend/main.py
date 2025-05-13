@@ -22,7 +22,6 @@ from agents import Agent, Runner
 load_dotenv()
 
 
-# TODO : Fix (find some workaround (potentially using sys))
 class Settings(BaseSettings):
     server_script_path: str = (
         "/Users/ayandas/Desktop/zed-proj/shield-takehome-proj/rag-chatbot-v1/rag-backend/server.py"
@@ -42,7 +41,7 @@ async def get_openAI_Agent_list():
 
     professor = Agent(
         name="Professor",
-        instructions="You are a helpful assistant who can take raw string data and convert it into easily readable markdown format.",
+        instructions="You are a helpful assistant who can take raw string data and convert it into easily readable markdown format. Discard any kind of vector embeddings or code that you may recieve.",
     )
 
     return [professor, principal_software_engineer]
